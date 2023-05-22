@@ -1,2 +1,2 @@
-# JavaScript-Help
-Simple Cheat Sheets & Tips To Up Your Javascript Game
+# Useful Utilities
+Simple Very Handy Utilities To Up Your Javascript/HTML Game
