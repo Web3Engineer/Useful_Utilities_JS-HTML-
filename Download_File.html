@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<style>
+</style>
+<script>
+
+
+function download(filename, text) {
+let text = "abc";
+let filename = "FileName.md";
+let element = document.createElement('a');
+element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+element.setAttribute('download', filename);
+element.style.display = 'none';
+document.body.appendChild(element);
+element.click();
+document.body.removeChild(element);
+}
+download(filename, text);
+
+</script>
+</body>
+</html>

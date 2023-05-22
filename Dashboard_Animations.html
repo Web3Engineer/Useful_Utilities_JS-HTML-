@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@keyframes flash {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#beach {
+  position:absolute;
+  top:0px;
+}
+
+#banner {
+  position: fixed;
+  right: 0;
+  animation: flash 2s infinite;
+  transform-origin: top right;
+  transform: scale(1);
+}
+@media screen and (max-width: 768px) {
+  #banner {
+    transform: scale(0.5);
+  }
+}
+
+/*Centers image*/
+/*
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+*/
+
+</style>
+</head>
+<body>
+  
+<img id="beach" src="./beach.jpg">
+<img id="banner" src="./banner.png">
+
+</body>
+</html>

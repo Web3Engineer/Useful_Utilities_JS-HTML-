@@ -1,0 +1,16 @@
+<button onclick="clipbord()">button</button>
+
+<script>
+
+const text = 'some user text';
+
+function clipbord (){
+
+navigator.clipboard.writeText(text).then(() => {
+alert("You have copied: '"+text+"' Into Your Clipbord");
+});
+
+}
+
+
+</script>
