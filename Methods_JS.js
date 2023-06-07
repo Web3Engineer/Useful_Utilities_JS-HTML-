@@ -117,13 +117,14 @@ setTimeout(function(){ console.log("timeout"); }, 9e3);
 //Exits a running terminal proccess (the '0' parameter just means exit w/ out an error code), Proccess killed where method is invoked!!!
 //// process.exit(0) ////$$$$
  
-//Spread Operator
+
+//Spread Operator, combine arrays
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 
 const combinedArr = [...arr1, ...arr2];
 
-console.log(combinedArr); // [1, 2, 3, 4, 5, 6]
+console.log(combinedArr); //~$ [1, 2, 3, 4, 5, 6]
 
 
 //Discard all characters except keep explicitly desired character(s)
@@ -154,9 +155,58 @@ if (element == Math.min(...numbers_array)){min=element;}
 console.log(`Minimum: "${min}"! Maximum: "${max}"!`);
 
 
+//Remove Duplicate Elements In Array
+const arrRaw = [1,1,2,2,"a","a","b" ];
+
+function removeDuplicates (_someArr){return [...new Set(_someArr)];} //Removes Duplicates
+
+const arrTrimmed = removeDuplicates(arrRaw);
+
+console.log(arrTrimmed); //~$ [ 1, 2, 'a', 'b' ]
+
+
+//READ AND WRITE OBJECTS/ARRAYS FROM & TO HD
+const fs = require('fs');
+
+//WRITE ARRAY TO HD
+const arrayToWrite = [  "a", "b", "c", 1, 2, 3];
+fs.writeFileSync('./Array_To_String.txt', JSON.stringify(arrayToWrite));
+
+//READ ARRAY FROM HD
+const arrayToRead = JSON.parse(fs.readFileSync('./Array_To_String.txt', 'utf-8'));
+console.log(arrayToRead);
+console.log(arrayToRead[0]);
+
+//WRITE OBJECT TO HD
+const objectToWrite = {"Key1":"Value1", "Key2":"Value2"}
+fs.writeFileSync("./Object_To_String.txt", JSON.stringify(objectToWrite));
+
+//READ OBJECT FROM HD
+const objectToRead = JSON.parse(fs.readFileSync('./Object_To_String.txt', 'utf-8'));
+console.log(objectToRead);
+console.log(objectToRead["Key1"]);
+
+
+////Adding Properties to an empty Object
+const animalData = {};
+// Add properties to the object:
+animalData['🐶'] = 'Dog';
+animalData['🐱'] = 'Cat';
+animalData['🐰'] = 'Rabbit';
+
+console.log(animalData);
+//~$ {
+//~$ '🐶': 'Dog',
+//~$ '🐱': 'Cat',
+//~$ '🐰': 'Rabbit'
+//~$ }
+
+
+
 
 //////////---OPERATORS---/////////
-//
+//                                  
+//                        ASSIGN =
 //                          NOT  !
 //                           OR  ||
 //                          AND  &&
